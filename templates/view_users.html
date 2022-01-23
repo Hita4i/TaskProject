@@ -1,0 +1,30 @@
+{% extends 'base_test.html' %}
+{% block title%}
+Список оборудования
+{% endblock %}
+--------------------------------------------------------
+{% block page_title %}
+Перелік відвідувачів
+{% endblock %}
+--------------------------------------------------------
+{% block body%}
+<table class="table table-bordered table-hover table-sm">
+  <thead class="table table-dark">
+    <th>id</th>
+    <th>Ім'я</th>
+    <th>Прізвище</th>
+    <th>Email</th>
+  </thead>
+  <tbody>
+{% for e in users_list %}
+    <tr class="table-light">
+    <td>{{e.id}}</td>
+    <td>{{e.first_name}}</td>
+    <td>{{e.last_name}}</td>
+    <td>{{e.email}}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+
+  </table>
+{% endblock %}
